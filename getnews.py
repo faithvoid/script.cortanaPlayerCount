@@ -15,7 +15,7 @@ def get_news_insignia(feed_url):
             if desc_elem is not None and desc_elem.text:
                 news_text = desc_elem.text.strip()
                 safe_text = news_text.replace('"', "'")
-                xbmc.executebuiltin('Skin.SetString(cortanaLatestNewsInsignia, "{}")'.format(safe_text))
+                xbmc.executebuiltin('Skin.SetString(LatestNewsInsignia, "{}")'.format(safe_text))
                 return True
     except Exception as e:
         xbmc.log("Error fetching or parsing news: %s" % str(e), xbmc.LOGERROR)
@@ -32,7 +32,7 @@ def get_news_xlink(feed_url):
             if desc_elem is not None and desc_elem.text:
                 news_text = desc_elem.text.strip()
                 safe_text = news_text.replace('"', "'")
-                xbmc.executebuiltin('Skin.SetString(cortanaLatestNewsXLink, "{}")'.format(safe_text))
+                xbmc.executebuiltin('Skin.SetString(LatestNewsXLink, "{}")'.format(safe_text))
                 return True
     except Exception as e:
         xbmc.log("Error fetching or parsing news: %s" % str(e), xbmc.LOGERROR)
